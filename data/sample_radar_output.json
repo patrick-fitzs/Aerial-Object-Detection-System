@@ -1,0 +1,9 @@
+{
+  "detections": [
+    {
+      "range": 1000.0,
+      "velocity": 150.0,
+      "signal_strength": 0.85
+    }
+  ]
+}
