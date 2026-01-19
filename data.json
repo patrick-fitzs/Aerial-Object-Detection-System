@@ -1,1 +1,15 @@
-// json examples here:
+{
+  "timestamp_ns": 1000000000,
+  "targets" : [
+    {
+      "id":  1,
+      "type": "missile",
+      "position_m":  [100.0, 75.0, 50.0],
+      "velocity_mps": [500.0, 300.0, 150.0],
+      "acceleration_mps2": [1.1, -10.8, 0.0],
+      "rcs_m2" : 0.20,
+      "orientation_degrees" : [10.2, 15.3, 17.8]
+
+    }
+  ]
+}
