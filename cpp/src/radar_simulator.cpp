@@ -18,4 +18,5 @@ std::vector<RadarDetection> RadarSimulator::getDetections() const {
 
 void RadarSimulator::outputToJSON(const std::string& filename) const {
     // Boilerplate: Add JSON output logic here
+    std::cout << "test" << std::endl;
 }
