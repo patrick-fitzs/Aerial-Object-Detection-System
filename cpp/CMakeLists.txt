@@ -1,4 +1,7 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.16)
+
+set(CMAKE_POLICY_VERSION_MINIMUM 3.5)
+
 project(RadarDetection VERSION 1.0.0 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
@@ -9,16 +12,19 @@ include(FetchContent)
 FetchContent_Declare(
     nlohmann_json
     GIT_REPOSITORY https://github.com/nlohmann/json.git
-    GIT_TAG v3.11.2
+    GIT_TAG v3.10.5
 )
 
 FetchContent_MakeAvailable(nlohmann_json)
 
-include_directories(include)
 
 add_executable(radar_simulator
     src/main.cpp
     src/radar_simulator.cpp
+)
+
+target_include_directories(radar_simulator PRIVATE
+        include
 )
 
 target_link_libraries(radar_simulator
