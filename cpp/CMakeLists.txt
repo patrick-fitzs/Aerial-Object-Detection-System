@@ -21,6 +21,7 @@ FetchContent_MakeAvailable(nlohmann_json)
 add_executable(radar_simulator
     src/main.cpp
     src/radar_simulator.cpp
+        core/tracking/kalman_filter.h
 )
 
 target_include_directories(radar_simulator PRIVATE
