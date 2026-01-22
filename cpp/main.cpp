@@ -1,12 +1,10 @@
-#include "radar_simulator.h"
+#include "core/simulation/Simulator.h"
 #include <iostream>
 
 int main() {
-    RadarSimulator simulator;
-    
-    simulator.simulate();
-    simulator.outputToJSON("../data/radar_output.json");
-    
+    Simulator sim;
+    std:
+        std::cout << "tester" << std::endl;
     return 0;
 }
 // create the flying objecs , can make it turn directions and stuff
