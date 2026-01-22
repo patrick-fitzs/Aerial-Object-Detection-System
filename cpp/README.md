@@ -35,3 +35,7 @@ Transfer of data from CPP → Python
   - controls signal strength and detection probability.
 - `orientation_degrees`: The targets orientation in degrees [roll, pitch, yaw]
   - realism
+
+
+in `/data` folder we have radar_log.json to store output/targets from C++ 
+in `/src/tracking` we have `Kalman_filter.cpp` and `kalman_filter.h` for predicting the next position, 
