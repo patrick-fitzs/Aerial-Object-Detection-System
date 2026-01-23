@@ -1,26 +1,27 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.16)
 project(RadarDetection VERSION 1.0.0 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-include(FetchContent)
+# Include directories
+include_directories(${CMAKE_SOURCE_DIR}/include)
 
-FetchContent_Declare(
-    nlohmann_json
-    GIT_REPOSITORY https://github.com/nlohmann/json.git
-    GIT_TAG v3.11.2
+file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS
+        main.cpp
 )
 
-FetchContent_MakeAvailable(nlohmann_json)
-
-include_directories(include)
-
-add_executable(radar_simulator
-    src/main.cpp
-    src/radar_simulator.cpp
+add_executable(Aerial-Object-Detection-System ${SOURCES}
+        main.cpp
+        # not sure we need more cpp files but pop them here if we do
 )
 
-target_link_libraries(radar_simulator
-    nlohmann_json::nlohmann_json
+target_include_directories(Aerial-Object-Detection-System PRIVATE
+        ${CMAKE_SOURCE_DIR}/include
 )
+
+if(MSVC)
+    target_compile_options(Aerial-Object-Detection-System PRIVATE /W4)
+else()
+    target_compile_options(Aerial-Object-Detection-System PRIVATE -Wall -Wextra -pedantic)
+endif()
